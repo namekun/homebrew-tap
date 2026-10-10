@@ -1,6 +1,6 @@
 cask "nunsseop" do
-  version "0.22.0"
-  sha256 "c1f9365b9469d744ae24737aba7e52c308f7ed6f72b1811323bb322cc1fce066"
+  version "0.23.0"
+  sha256 "8f7d3fa5e425959abb210d2bc77389cd3311a494bb3f03dfd5c35f84a9f6f247"
 
   url "https://github.com/namekun/Nunsseop/releases/download/v#{version}/Nunsseop-#{version}.dmg"
   name "Nunsseop"
