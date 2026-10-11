@@ -12,6 +12,7 @@ cask "nunsseop" do
     strategy :github_latest
   end
 
+  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "Nunsseop.app"
