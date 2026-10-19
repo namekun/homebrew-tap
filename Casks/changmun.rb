@@ -1,6 +1,6 @@
 cask "changmun" do
-  version "0.2.2"
-  sha256 "a9a18e05d4e8828c0806e0eff7f875d8eef9cef5e0691bc674d8edccdaf3301f"
+  version "0.3.0"
+  sha256 "36f8aa24d97da313876d5ea0de36907b895ebbe914a38ecbc5fcfa2890862a1e"
 
   url "https://github.com/namekun/Changmun/releases/download/v#{version}/Changmun-#{version}.dmg"
   name "Changmun"
@@ -16,6 +16,7 @@ cask "changmun" do
   depends_on macos: :sonoma
 
   app "Changmun.app"
+  binary "#{appdir}/Changmun.app/Contents/Resources/changmun"
 
   # The app is ad-hoc signed and not notarized.
   postflight_steps do
