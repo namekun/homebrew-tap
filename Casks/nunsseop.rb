@@ -17,11 +17,6 @@ cask "nunsseop" do
 
   app "Nunsseop.app"
 
-  # The app is ad-hoc signed and not notarized.
-  postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Nunsseop.app"]
-  end
-
   uninstall quit: "io.github.namekun.Nunsseop"
 
   zap trash: [
