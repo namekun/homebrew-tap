@@ -12,12 +12,13 @@ cask "changmun" do
     strategy :github_latest
   end
 
+  auto_updates true
+
   depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "Changmun.app"
   binary "#{appdir}/Changmun.app/Contents/Resources/changmun"
-
 
   uninstall quit: "io.github.namekun.Changmun"
 
