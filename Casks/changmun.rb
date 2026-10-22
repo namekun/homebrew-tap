@@ -18,9 +18,10 @@ cask "changmun" do
   app "Changmun.app"
   binary "#{appdir}/Changmun.app/Contents/Resources/changmun"
 
-  # This version is signed with a Developer ID but not notarized.
+  # This version is signed with a Developer ID but not notarized. Where macOS won't let the terminal change apps
+  # (App Management), the app keeps its quarantine and opens with Open Anyway in Privacy & Security.
   postflight_steps do
-    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Changmun.app"]
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Changmun.app"], must_succeed: false
   end
 
   uninstall quit: "io.github.namekun.Changmun"
