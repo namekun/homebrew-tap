@@ -1,6 +1,6 @@
 cask "changmun" do
-  version "0.4.4"
-  sha256 "c35a54aa56944e83fb8f8b3a9f5e670895cd2ef676503713eb70a5004a2e1b46"
+  version "0.5.0"
+  sha256 "b70f3aeacd90b65f449e821f58b705d9da026a0e0efeb71609c8a349cca652d0"
 
   url "https://github.com/namekun/Changmun/releases/download/v#{version}/Changmun-#{version}.dmg"
   name "Changmun"
@@ -17,6 +17,11 @@ cask "changmun" do
 
   app "Changmun.app"
   binary "#{appdir}/Changmun.app/Contents/Resources/changmun"
+
+  # This version is signed with a Developer ID but not notarized.
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{appdir}}/Changmun.app"]
+  end
 
   uninstall quit: "io.github.namekun.Changmun"
 
