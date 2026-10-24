@@ -13,20 +13,32 @@ cask "changmun" do
   end
 
   auto_updates true
-
   depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "Changmun.app"
   binary "#{appdir}/Changmun.app/Contents/Resources/changmun"
 
-  uninstall quit: "io.github.namekun.Changmun"
+  uninstall quit: [
+    "io.github.namekun.Changmun",
+    "io.github.namekun.Changmun.agent",
+  ]
 
   zap trash: [
+    "~/Library/Application Support/Changmun Agent",
+    "~/Library/Application Support/Changmun Headless",
     "~/Library/Application Support/Changmun",
     "~/Library/Caches/io.github.namekun.Changmun",
+    "~/Library/Caches/io.github.namekun.Changmun.agent",
+    "~/Library/Caches/io.github.namekun.Changmun.headless",
     "~/Library/HTTPStorages/io.github.namekun.Changmun",
+    "~/Library/HTTPStorages/io.github.namekun.Changmun.agent",
+    "~/Library/HTTPStorages/io.github.namekun.Changmun.headless",
+    "~/Library/Preferences/io.github.namekun.Changmun.agent.plist",
+    "~/Library/Preferences/io.github.namekun.Changmun.headless.plist",
     "~/Library/Preferences/io.github.namekun.Changmun.plist",
     "~/Library/WebKit/io.github.namekun.Changmun",
+    "~/Library/WebKit/io.github.namekun.Changmun.agent",
+    "~/Library/WebKit/io.github.namekun.Changmun.headless",
   ]
 end
