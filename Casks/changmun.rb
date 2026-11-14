@@ -1,6 +1,6 @@
 cask "changmun" do
-  version "0.16.1"
-  sha256 "6cda110e5bb2075c0849a104f1f7b96188e68e2331e6b8d9f9b26ce3d51c4372"
+  version "0.16.2"
+  sha256 "f2467d46b119a9ccdc5a8deb1bde868d1c6911e9620a5b93ebc125925fd142aa"
 
   url "https://github.com/namekun/Changmun/releases/download/v#{version}/Changmun-#{version}.dmg"
   name "Changmun"
